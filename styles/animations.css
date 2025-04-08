@@ -5,13 +5,10 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
-
-/*Блок @keyframes */
 
 @keyframes like-zoom {
   0% {
@@ -40,22 +37,26 @@
 /* like:hover */
 .like-icon:hover .main-body {
   fill: var(--main-color);
+
   transition: fill 0.3s 0.05s linear;
 }
 
 .like-icon:hover .core {
   fill: var(--main-color);
+
   transition: fill 0.3s linear;
 }
 
 /* like:active */
 .like-icon:active .main-body {
   fill: var(--animation-fill-color);
+
   transition: fill 0.3s 0.05s linear;
 }
 
 .like-icon:active .core {
   fill: var(--animation-fill-color);
+
   transition: fill 0.3s linear;
 }
 
@@ -70,11 +71,13 @@
 
 .like-icon.is-liked .core {
   fill: var(--animation-fill-color);
+
   transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--animation-fill-color);
+
   transition: fill 0.3s 0.05s linear;
 }
 
@@ -84,15 +87,18 @@
 
 .like-icon.is-liked .contour {
   fill: var(--animation-fill-color);
+
   transition: fill 0.3s 0.06s linear;
 }
 
 .like-icon.is-liked .heart {
   transform-origin: center;
+
   animation: like-zoom 0.3s 0.1s ease-in alternate;
 }
 
 .like-icon.is-liked .sparks {
   transform-origin: center;
+
   animation: like-sparks 0.3s 0.3s ease-in alternate;
 }

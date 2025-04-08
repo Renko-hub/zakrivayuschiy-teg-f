@@ -5,212 +5,18 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
 
-/* Стили для page*/
-
-.page {
-  width: calc(100vw * (700 / 1440));
-  min-width: 430px;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  color: var(--main-color);
-  font-family: var(--font-main);
-  background: var(--background-image);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  font-variation-settings: "wght" var(--font-weight-content);
-}
-
-/* Стили для header (шапка сайта)*/
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 100px;
-  border: 2px solid var(--main-color);
-  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
-  font-family: var(--font-accent);
-  background-color: var(--backgroud-color);
-}
-
-.header__logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.header__title {
-  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-  text-transform: uppercase;
-}
-
-.header__description {
-  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  text-transform: uppercase;
-}
-
-/* Стили для main */
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-}
-
-/* Стили для post */
-.post {
-  border: 2px solid var(--main-color);
-  background-color: var(--backgroud-color);
-}
-
-.post__title {
-  padding: 5px 10px;
-  font-size: 18px;
-  font-variation-settings: "wght" var(--font-weight-title);
-}
-
-.post__cover {
-  position: relative;
-  border-top: 2px solid var(--main-color);
-  border-bottom: 2px solid var(--main-color);
-}
-
-.post__cover__image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  aspect-ratio: 1 / 1;
-}
-
-.post__cover__watermark {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  opacity: 0.5;
-  color: var(--main-color);
-  font-family: var(--font-accent);
-  font-weight: var(--font-weight-content);
-  font-size: 14px;
-  text-shadow: 0 0 1px var(--backgroud-color);
-}
-
-@supports (
-  (
-      (text-stroke: 1px var(--backgroud-color)) or
-        (-webkit-text-stroke: 1px var(--backgroud-color))
-    )
-    and (mix-blend-mode: hard-light)
-) {
-  .post__cover__watermark {
-    text-shadow: none;
-    -webkit-text-stroke: 1px var(--backgroud-color);
-    text-stroke: 1px var(--backgroud-color);
-    mix-blend-mode: hard-light;
-  }
-}
-
-.post__content {
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  padding: 25px;
-  padding-bottom: 22px;
-  font-size: 18px;
-  line-height: 21px;
-  font-variation-settings: "wght" var(--font-weight-content);
-}
-
-.post__buttons {
-  display: flex;
-  justify-content: end;
-  gap: 7px;
-  padding-bottom: 3px;
-}
-
-/* Стили для section (секция main)*/
-
-.section {
-  display: flex;
-  justify-content: center;
-}
-
-/* Стили для card */
-
-.card__icon-button {
-  position: relative;
-  display: flex;
-  align-items: end;
-  min-height: 38px;
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.card__icon-button:focus {
-  outline: none;
-}
-
-.card__icon-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  outline: 2px solid var(--main-color);
-  outline-offset: -2px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-}
-
-.card__icon-button:focus-within::before {
-  opacity: 100;
-  z-index: 0;
-}
-
-.card__like-button {
-  width: 130px;
-  min-height: 38px;
-  padding: 9px 17px;
-}
-
-/* Стили для button */
-
-.button__container {
-  background: var(--backgroud-color);
-}
-
+/* Повторяющиеся стили для кнопок с заливкой */
 .button {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: 2px solid var(--main-color);
-  background: var(--backgroud-color);
+  background: var(--background-section-color);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
-}
-
-.section__button {
-  gap: 8px;
-  min-height: 55px;
-  padding: 15px 20px;
-}
-
-.button:focus-visible {
-  box-shadow: 2px 2px var(--main-color);
-  outline: none;
 }
 
 .button::before {
@@ -228,6 +34,12 @@
   width: 100%;
 }
 
+.button:focus-visible {
+  box-shadow: 2px 2px var(--main-color);
+  outline: none;
+}
+
+/* Повторяющиеся стили текста для кнопок с заливкой */
 .button__text {
   font-family: var(--font-accent);
   font-weight: var(--font-weight-content);
@@ -241,28 +53,35 @@
 }
 
 .button:hover .button__text {
-  color: var(--backgroud-color);
+  color: var(--button-text-color);
 }
 
+/* Повторяющиеся стили КНОПКИ И КАРТИНОК для кнопок с заливкой */
 .button svg {
   transition: color 0.5s ease-in-out;
 }
 
 .button:hover svg {
-  color: var(--backgroud-color);
+  color: var(--button-text-color);
 }
 
+/* Суппорт для всех кнопок с заливкой */
 @supports (mix-blend-mode: difference) {
+  .button__text {
+    mix-blend-mode: difference;
+    -webkit-mix-blend-mode: difference;
+  }
+
   .button .button__text {
     transition: none;
   }
 
-  .button svg {
-    transition: none;
-    mix-blend-mode: difference;
+  .button:hover .button__text {
+    color: var(--button-text-color);
   }
 
-  .button:hover .button__text {
+  .button svg {
+    transition: none;
     color: var(--button-text-color);
   }
 
@@ -270,9 +89,192 @@
     color: var(--button-text-color);
   }
 
-  .button__text {
+  .button__icon {
     mix-blend-mode: difference;
+    -webkit-mix-blend-mode: difference;
   }
+}
+
+.button__icon {
+  max-height: 21px;
+  width: auto;
+}
+
+/* Стили для всей секции page*/
+
+.page {
+  margin: 100px auto;
+  width: calc(100vw * (525/ 1440));
+  min-width: 430px;
+  font-family: var(--font-main);
+  color: var(--main-color);
+  font-variation-settings: "wght" var(--font-weight-content);
+  background: var(--background-fill);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Стили для всей секции header */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px auto;
+  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
+  border: 2px solid var(--main-color);
+  background-color: var(--background-section-color);
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+}
+
+/* Общий контейнер заголовка header*/
+.header__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Заголовок h1 в header */
+.header__title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+/* Текст под заголовком в heade*/
+.header__description {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+/* Стили для всей секции main */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Стили для post - общий блок */
+.post {
+  border: 2px solid var(--main-color);
+  background-color: var(--background-section-color);
+}
+
+/* Стили для заголовка post */
+.post__title {
+  font-size: 18px;
+  font-variation-settings: "wght" var(--font-weight-title);
+  padding: 5px 10px;
+}
+
+/* Стили для блока с картинкой в post */
+.post__cover {
+  position: relative;
+}
+
+/* Стили для картинки в post */
+.post__cover__image {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1 / 1;
+}
+
+/* Стили для водяного знака в post */
+.post__cover__watermark {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  opacity: 0.5;
+  font-size: 14px;
+  color: var(--main-color);
+  font-family: var(--font-accent);
+  font-weight: var(--font-weight-content);
+  text-shadow: 0 0 1px var(--background-section-color);
+}
+
+/* Суппорт для водяного знака в post */
+@supports (((text-stroke: 1px var(--background-section-color)) or (-webkit-text-stroke: 1px var(--background-section-color))) and (mix-blend-mode: hard-light)) {
+  .post__cover__watermark {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--background-section-color);
+    text-stroke: 1px var(--background-section-color);
+    mix-blend-mode: hard-light;
+  }
+}
+
+/* Стили для блока с текстом внутри post*/
+.post__content {
+  font-size: 18px;
+  line-height: 21px;
+  font-variation-settings: "wght" var(--font-weight-content);
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 25px;
+}
+
+/* Стили для блока с кнопкой и иконкой Лайка внутри post*/
+.post__buttons {
+  display: flex;
+  justify-content: end;
+  gap: 7px;
+  padding-bottom: 3px;
+}
+
+/* Стили для кнопки Лайка */
+.card__like-button {
+  width: 130px;
+  height: 38px;
+  padding: 9px 17px;
+}
+
+/* Стили для группы SVG внутри card */
+.card__icon-button {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: end;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-within::before {
+  opacity: 100;
+  z-index: 0;
+}
+
+.card__icon-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  outline: 2px solid var(--main-color);
+  outline-offset: -2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+/* Секция с кнопокй Сохранить */
+.footer__main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 55px;
+  padding: 15px 20px;
 }
 
 /* Стили для dialog */
@@ -286,7 +288,7 @@ dialog::backdrop {
   min-width: 341px;
   border: 2px solid var(--main-color);
   padding: 30px;
-  background: var(--backgroud-color);
+  background: var(--background-section-color);
 }
 
 .dialog__container {
@@ -316,12 +318,7 @@ dialog::backdrop {
   padding: 9px 17px;
 }
 
-.button__icon {
-  min-width: 20px;
-  height: auto;
-}
-
-/* Стили для цветовых фильтров изображений */
+/* Цветовые фильтры для изображений*/
 .image_brightness {
   filter: brightness(130%);
 }
@@ -356,22 +353,28 @@ dialog::backdrop {
 
 /* Блок медиа-запросов */
 
-@media (width <= 375px) {
+@media (width <=375px) {
   .page {
     width: 100%;
-    min-width: 320px;
+    min-width: 375px;
   }
 
-  .section__button {
+  .footer__button {
+    width: 100%;
     flex-direction: column;
   }
 
-  .section__button svg {
+  .footer__button svg {
     width: 28px;
     height: 28px;
   }
 
+  .post__buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .dialog {
-    padding: 30px 40px;
+    padding: 30px 42px;
   }
 }
