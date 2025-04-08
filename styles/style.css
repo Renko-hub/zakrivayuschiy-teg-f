@@ -193,11 +193,11 @@
 }
 
 /* Суппорт для водяного знака в post */
-@supports (((--text-stroke: 1px var(--background-section-color)) or (-webkit-text-stroke: 1px var(--background-section-color))) and (mix-blend-mode: hard-light)) {
+@supports (((text-stroke: 1px var(--background-section-color)) or (-webkit-text-stroke: 1px var(--background-section-color))) and (mix-blend-mode: hard-light)) {
   .post__cover__watermark {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--background-section-color);
-    --text-stroke: 1px var(--background-section-color);
+    text-stroke: 1px var(--background-section-color);
     mix-blend-mode: hard-light;
   }
 }
