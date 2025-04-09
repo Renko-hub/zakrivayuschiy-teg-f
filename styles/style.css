@@ -95,17 +95,10 @@
   }
 }
 
-.button__icon {
-  max-height: 21px;
-  width: auto;
-}
-
 /* Стили для всей секции page*/
-
 .page {
   margin: 100px auto;
-  width: calc(100vw * (525/ 1440));
-  min-width: 430px;
+  width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
   font-family: var(--font-main);
   color: var(--main-color);
   font-variation-settings: "wght" var(--font-weight-content);
@@ -218,7 +211,6 @@
   display: flex;
   justify-content: end;
   gap: 7px;
-  padding-bottom: 3px;
 }
 
 /* Стили для кнопки Лайка */
@@ -278,30 +270,28 @@
 }
 
 /* Стили для dialog */
+.dialog {
+  width: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
+  min-width: 353px;
+  border: 2px solid var(--main-color);
+  background: var(--background-section-color);
+}
+
 dialog::backdrop {
   opacity: 0.75;
   background: var(--main-color);
-}
-
-.dialog {
-  width: calc(100vw * (352 / 1440));
-  min-width: 341px;
-  border: 2px solid var(--main-color);
-  padding: 30px;
-  background: var(--background-section-color);
 }
 
 .dialog__container {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  padding: 30px;
   color: var(--main-color);
 }
 
 .dialog__warning {
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 20px;
   font-family: var(--font-accent);
   font-size: 14px;
@@ -310,9 +300,6 @@ dialog::backdrop {
 }
 
 .dialog__button {
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
   width: 100%;
   min-height: 38px;
   padding: 9px 17px;
@@ -351,8 +338,19 @@ dialog::backdrop {
   filter: contrast(200%) blur(0.3rem);
 }
 
-/* Блок медиа-запросов */
+/* Отдельные стилт для Дискеты в секциях Сохранить и 
+Диалог */
+.button__icon {
+  max-width: 21px;
+  height: auto;
+}
 
+.dialog__icon {
+  min-width: 39px;
+  height: auto;
+}
+
+/* Блок медиа-запросов */
 @media (width <=375px) {
   .page {
     width: 100%;
@@ -360,21 +358,11 @@ dialog::backdrop {
   }
 
   .footer__button {
-    width: 100%;
     flex-direction: column;
   }
 
-  .footer__button svg {
-    width: 28px;
-    height: 28px;
-  }
-
-  .post__buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .dialog {
-    padding: 30px 42px;
+  .button__icon {
+    min-width: 28px;
+    height: auto;
   }
 }
