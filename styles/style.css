@@ -97,8 +97,9 @@
 
 /* Стили для всей секции page*/
 .page {
-  margin: 100px auto;
-  width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: var(--font-main);
   color: var(--main-color);
   font-variation-settings: "wght" var(--font-weight-content);
@@ -114,6 +115,7 @@
   flex-direction: column;
   align-items: center;
   margin: 100px auto;
+  inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
   padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
   border: 2px solid var(--main-color);
   background-color: var(--background-section-color);
@@ -144,6 +146,8 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
+  inline-size: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
+  margin-bottom: 100px;
 }
 
 /* Стили для post - общий блок */
@@ -271,8 +275,8 @@
 
 /* Стили для dialog */
 .dialog {
-  width: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
-  min-width: 353px;
+  width: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
+  padding: 30px;
   border: 2px solid var(--main-color);
   background: var(--background-section-color);
 }
@@ -286,7 +290,6 @@ dialog::backdrop {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 30px;
   color: var(--main-color);
 }
 
@@ -364,5 +367,13 @@ dialog::backdrop {
   .button__icon {
     min-width: 28px;
     height: auto;
+  }
+
+  .post__cover__watermark {
+    right: 13px;
+  }
+
+  .dialog {
+    padding: 30px 40px;
   }
 }
