@@ -300,6 +300,7 @@ dialog::backdrop {
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
+
 }
 
 .dialog__button {
