@@ -291,6 +291,7 @@ dialog::backdrop {
   flex-direction: column;
   gap: 30px;
   color: var(--main-color);
+
 }
 
 .dialog__warning {
@@ -300,7 +301,7 @@ dialog::backdrop {
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
-
+  min-width: clamp(16.0625rem, 15.2702rem + 3.3803vw, 18.3125rem);
 }
 
 .dialog__button {
