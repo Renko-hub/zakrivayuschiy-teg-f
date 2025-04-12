@@ -276,7 +276,7 @@
 /* Стили для dialog */
 .dialog {
   width: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
-  padding: clamp(1.875rem, 1.6964rem + 0.8929vw, 2.5rem);
+  padding: 30px;
   border: 2px solid var(--main-color);
   background: var(--background-section-color);
 }
@@ -372,5 +372,9 @@ dialog::backdrop {
 
   .post__cover__watermark {
     right: 13px;
+  }
+
+  .dialog {
+    padding: 30px 40px;
   }
 }
