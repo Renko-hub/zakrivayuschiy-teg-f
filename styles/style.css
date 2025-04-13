@@ -358,7 +358,6 @@ dialog::backdrop {
 @media (width <=375px) {
   .page {
     width: 100%;
-    min-width: 375px;
   }
 
   .footer__button {
